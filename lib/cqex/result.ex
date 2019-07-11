@@ -52,8 +52,8 @@ defmodule CQEx.Result do
   def size(rec), do: CQErl.size(rec)
 
   @spec head(CQEx.cql_result() | CQEx.Result.t()) :: Keyword.t() | Map.t()
-  def head(%Result{record: rec}), do: CQErl.head(rec)
-  def head(rec), do: CQErl.head(rec)
+  def head(%Result{record: rec}), do: nillify(CQErl.head(rec))
+  def head(rec), do: nillify(CQErl.head(rec))
 
   @spec head(CQEx.cql_result() | CQEx.Result.t(), Keyword.t()) :: Keyword.t() | Map.t()
   def head(%Result{record: rec}, opts), do: nillify(CQErl.head(rec, opts))
