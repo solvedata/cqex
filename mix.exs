@@ -21,7 +21,9 @@ defmodule CQEx.Mixfile do
   end
 
   defp deps do
-    [{ :cqerl, "~> 1.1.1" }]
+    [
+      {:cqerl, github: "solvedata/cqerl"}
+    ]
   end
 
   defp description do
